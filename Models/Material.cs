@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace EstoqueLiaTattoo.Models;
 
@@ -29,5 +30,6 @@ public class Material
     public virtual Categoria? Categoria { get; set; }
 
     // Ela é apenas para o C# conseguir "enxergar" as movimentações deste material
+    [JsonIgnore]
     public virtual ICollection<Movimentacao> Movimentacoes { get; set; } = new List<Movimentacao>();
 }
