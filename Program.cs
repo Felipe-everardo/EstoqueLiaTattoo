@@ -11,12 +11,8 @@ builder.Services.AddDbContext<EstoqueLiaTattooContext>(options =>
 
 // Add services to the container.
 
-builder.Services.AddControllers()
-    .AddJsonOptions(options =>
-    {
-        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
-    });
-
+builder.Services.AddControllers();
+    
 builder.Services.AddScoped<IEstoqueService, EstoqueService>();
 
 var app = builder.Build();

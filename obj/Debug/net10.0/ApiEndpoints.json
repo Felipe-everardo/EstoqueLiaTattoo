@@ -118,7 +118,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[EstoqueLiaTattoo.Models.Material, EstoqueLiaTattoo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[EstoqueLiaTattoo.DTOs.MaterialResponseDTO, EstoqueLiaTattoo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -170,7 +170,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "EstoqueLiaTattoo.Models.Material",
+        "Type": "EstoqueLiaTattoo.DTOs.MaterialResponseDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -226,7 +226,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[EstoqueLiaTattoo.Models.Movimentacao, EstoqueLiaTattoo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[EstoqueLiaTattoo.DTOs.MaterialResponseDTO, EstoqueLiaTattoo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -264,7 +264,7 @@
   },
   {
     "ContainingType": "EstoqueLiaTattoo.Controllers.MovimentacoesController",
-    "Method": "GetMovimentacao",
+    "Method": "Get",
     "RelativePath": "api/Movimentacoes/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -278,7 +278,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "EstoqueLiaTattoo.Models.Movimentacao",
+        "Type": "EstoqueLiaTattoo.DTOs.MaterialResponseDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",

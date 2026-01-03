@@ -1,4 +1,5 @@
 ﻿using EstoqueLiaTattoo.Data;
+using EstoqueLiaTattoo.DTOs;
 using EstoqueLiaTattoo.Models;
 using EstoqueLiaTattoo.Services;
 using EstoqueLiaTattoo.Services.Impl;
@@ -24,14 +25,16 @@ namespace EstoqueLiaTattoo.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Movimentacao>>> Get() => Ok(await _service.ListarMovimentacoesAsync());
+        public async Task<ActionResult<IEnumerable<MovimentacaoResponseDTO>>> Get()
+        {
+            return Ok(await _service.ListarMovimentacoesAsync());
+        }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Movimentacao>> GetMovimentacao(int id)
+        public async Task<ActionResult<MovimentacaoResponseDTO>> Get(int id)
         {
-            var mov = await _service.ObterMovimentacaoPorIdAsync(id);
-            if (mov == null) return NotFound();
-            return Ok(mov);
+            var dto = await _service.ObterMovimentacaoPorIdAsync(id);
+            return dto == null ? NotFound() : Ok(dto);
         }
 
         [HttpPost]
@@ -45,7 +48,7 @@ namespace EstoqueLiaTattoo.Controllers
             }
 
             // Retorna Status 201 (Created), o link para o GET do item e o próprio objeto
-            return CreatedAtAction(nameof(GetMovimentacao), new { id = resultado.Id }, resultado);
+            return CreatedAtAction(nameof(Get), new { id = resultado.Id }, resultado);
         }
     }
 }

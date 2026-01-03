@@ -1,19 +1,25 @@
-﻿using EstoqueLiaTattoo.Models;
+﻿using EstoqueLiaTattoo.DTOs;
+using EstoqueLiaTattoo.Models;
 
 namespace EstoqueLiaTattoo.Services;
 
+
 public interface IEstoqueService
 {
-    // Métodos de Material
-    Task<IEnumerable<Material>> ListarMateriaisAsync();
-    Task<Material?> ObterMaterialPorIdAsync(int id);
+    // Métodos que retornam dados para a tela mudam para DTO
+    Task<IEnumerable<MaterialResponseDTO>> ListarMateriaisAsync();
+    Task<MaterialResponseDTO?> ObterMaterialPorIdAsync(int id);
+    Task<IEnumerable<MaterialResponseDTO>> ObterMateriaisCriticosAsync();
+
+    // Métodos de ação (POST/PUT) podem continuar recebendo a Model ou o DTO de criação
     Task<Material> CriarMaterialAsync(Material material);
     Task<bool> AtualizarMaterialAsync(Material material);
     Task<bool> DeletarMaterialAsync(int id);
-    Task<IEnumerable<Material>> ObterMateriaisCriticosAsync();
 
-    // Métodos de Movimentação
+    // Movimentações (Leituras)
+    Task<IEnumerable<MovimentacaoResponseDTO>> ListarMovimentacoesAsync();
+    Task<MovimentacaoResponseDTO?> ObterMovimentacaoPorIdAsync(int id);
+
+    // Movimentação (Escrita) - Recebe a Model e retorna a Model/DTO após criar
     Task<Movimentacao?> ProcessarMovimentacaoAsync(Movimentacao movimentacao);
-    Task<IEnumerable<Movimentacao>> ListarMovimentacoesAsync();
-    Task<Movimentacao?> ObterMovimentacaoPorIdAsync(int id);
 }

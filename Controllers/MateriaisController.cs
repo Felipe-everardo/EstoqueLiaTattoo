@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using EstoqueLiaTattoo.Data;
+using EstoqueLiaTattoo.DTOs;
+using EstoqueLiaTattoo.Models;
+using EstoqueLiaTattoo.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using EstoqueLiaTattoo.Data;
-using EstoqueLiaTattoo.Models;
-using EstoqueLiaTattoo.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace EstoqueLiaTattoo.Controllers
 {
@@ -20,13 +21,16 @@ namespace EstoqueLiaTattoo.Controllers
         public MateriaisController(IEstoqueService service) => _service = service;
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Material>>> Get() => Ok(await _service.ListarMateriaisAsync());
+        public async Task<ActionResult<IEnumerable<MaterialResponseDTO>>> Get()
+        {
+            return Ok(await _service.ListarMateriaisAsync());
+        }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Material>> Get(int id)
+        public async Task<ActionResult<MaterialResponseDTO>> Get(int id)
         {
-            var m = await _service.ObterMaterialPorIdAsync(id);
-            return m == null ? NotFound() : Ok(m);
+            var dto = await _service.ObterMaterialPorIdAsync(id);
+            return dto == null ? NotFound() : Ok(dto);
         }
 
         [HttpPost]

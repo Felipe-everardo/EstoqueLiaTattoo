@@ -13,7 +13,6 @@ public class Categoria
     public string Nome { get; set; } = string.Empty;
 
     // Relacionamento Inverso: Uma categoria tem muitos materiais
-    [JsonIgnore]
     public virtual ICollection<Material>? Materiais { get; set; }
 }
  
