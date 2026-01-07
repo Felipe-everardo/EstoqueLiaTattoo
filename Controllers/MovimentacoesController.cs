@@ -17,30 +17,30 @@ namespace EstoqueLiaTattoo.Controllers
     [ApiController]
     public class MovimentacoesController : ControllerBase
     {
-        private readonly IEstoqueService _service;
+        private readonly IMovimentacaoServico _movimentacaoService;
 
-        public MovimentacoesController(IEstoqueService estoqueService)
+        public MovimentacoesController(IMovimentacaoServico movimentacaoService)
         {
-            _service = estoqueService;
+            _movimentacaoService = movimentacaoService;
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MovimentacaoResponseDTO>>> Get()
         {
-            return Ok(await _service.ListarMovimentacoesAsync());
+            return Ok(await _movimentacaoService.ListarHistoricoAsync());
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<MovimentacaoResponseDTO>> Get(int id)
         {
-            var dto = await _service.ObterMovimentacaoPorIdAsync(id);
+            var dto = await _movimentacaoService.ObterPorIdAsync(id);
             return dto == null ? NotFound() : Ok(dto);
         }
 
         [HttpPost]
         public async Task<ActionResult<Movimentacao>> PostMovimentacao(Movimentacao movimentacao)
         {
-            var resultado = await _service.ProcessarMovimentacaoAsync(movimentacao);
+            var resultado = await _movimentacaoService.ProcessarMovimentacaoAsync(movimentacao);
 
             if (resultado == null)
             {

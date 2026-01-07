@@ -16,38 +16,38 @@ namespace EstoqueLiaTattoo.Controllers
     [ApiController]
     public class MateriaisController : ControllerBase
     {
-        private readonly IEstoqueService _service;
+        private readonly IMaterialService _materialService;
 
-        public MateriaisController(IEstoqueService service) => _service = service;
+        public MateriaisController(IMaterialService service) => _materialService = service;
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MaterialResponseDTO>>> Get()
         {
-            return Ok(await _service.ListarMateriaisAsync());
+            return Ok(await _materialService.ListarTodosAsync());
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<MaterialResponseDTO>> Get(int id)
         {
-            var dto = await _service.ObterMaterialPorIdAsync(id);
+            var dto = await _materialService.ObterPorIdAsync(id);
             return dto == null ? NotFound() : Ok(dto);
         }
 
         [HttpPost]
         public async Task<ActionResult<Material>> Post(Material material)
         {
-            var novo = await _service.CriarMaterialAsync(material);
+            var novo = await _materialService.CriarAsync(material);
             return CreatedAtAction(nameof(Get), new { id = novo.Id }, novo);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            return await _service.DeletarMaterialAsync(id) ? NoContent() : BadRequest("Erro ao deletar.");
+            return await _materialService.DeletarAsync(id) ? NoContent() : BadRequest("Erro ao deletar.");
         }
 
         [HttpGet("criticos")]
-        public async Task<ActionResult<IEnumerable<Material>>> GetCriticos() => Ok(await _service.ObterMateriaisCriticosAsync());
+        public async Task<ActionResult<IEnumerable<Material>>> GetCriticos() => Ok(await _materialService.ListarCriticosAsync());
     }
 
 }
