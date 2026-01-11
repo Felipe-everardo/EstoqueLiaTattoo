@@ -19,7 +19,7 @@ public class Material
     [Range(0, 1000, ErrorMessage = "A quantidade mínima deve ser um valor positivo.")]
     public int QuantidadeMinima { get; set; }
 
-    [Column(TypeName = "decimal(18,2)")] // Define a precisão do dinheiro no SQL
+    [Column(TypeName = "decimal(18,2)")]
     public decimal PrecoUnitario { get; set; }
 
     [Required]

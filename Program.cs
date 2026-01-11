@@ -11,17 +11,17 @@ builder.Services.AddDbContext<EstoqueLiaTattooContext>(options =>
 
 // Add services to the container.
 
-
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<IMovimentacaoServico, MovimentacaoService>();
 builder.Services.AddScoped<IMaterialService, MaterialService>();
+builder.Services.AddScoped<ITintaService, TintaService>();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("ReactPolity", policy =>
+    options.AddPolicy("ReactAppPolicy", policy =>
     {
-        policy.WithOrigins("http://localhost:3000")
+        policy.WithOrigins("http://localhost:5173", "http://localhost:5174")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -33,9 +33,10 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 
+app.UseCors("ReactAppPolicy");
+
 app.UseAuthorization();
 
-app.UseCors("ReactPolity");
 app.MapControllers();
 
 app.Run();

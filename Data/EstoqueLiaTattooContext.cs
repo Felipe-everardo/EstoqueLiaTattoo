@@ -14,8 +14,9 @@ namespace EstoqueLiaTattoo.Data
         {
         }
 
-        public DbSet<EstoqueLiaTattoo.Models.Movimentacao> Movimentacao { get; set; } = default!;
-        public DbSet<EstoqueLiaTattoo.Models.Material> Material { get; set; } = default!;
-        public DbSet<EstoqueLiaTattoo.Models.Categoria> Categoria { get; set; } = default!;
+        public DbSet<Movimentacao> Movimentacao { get; set; } = default!;
+        public DbSet<Material> Material { get; set; } = default!;
+        public DbSet<Categoria> Categoria { get; set; } = default!;
+        public DbSet<Tinta> Tinta { get; set; } = default!;
     }
 }

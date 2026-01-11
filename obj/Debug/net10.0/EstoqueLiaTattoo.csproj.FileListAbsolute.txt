@@ -274,5 +274,5 @@ C:\Users\feeve\OneDrive\Área de Trabalho\dev\Projetos\LiaTattooArt\EstoqueLiaTa
 C:\Users\feeve\OneDrive\Área de Trabalho\dev\Projetos\LiaTattooArt\EstoqueLiaTattoo\EstoqueLiaTattoo\obj\Debug\net10.0\EstoqueLiaTattoo.pdb
 C:\Users\feeve\OneDrive\Área de Trabalho\dev\Projetos\LiaTattooArt\EstoqueLiaTattoo\EstoqueLiaTattoo\obj\Debug\net10.0\EstoqueLiaTattoo.genruntimeconfig.cache
 C:\Users\feeve\OneDrive\Área de Trabalho\dev\Projetos\LiaTattooArt\EstoqueLiaTattoo\EstoqueLiaTattoo\obj\Debug\net10.0\ref\EstoqueLiaTattoo.dll
-C:\Users\feeve\OneDrive\Área de Trabalho\dev\Projetos\LiaTattooArt\EstoqueLiaTattoo\EstoqueLiaTattoo\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\Users\feeve\OneDrive\Área de Trabalho\dev\Projetos\LiaTattooArt\EstoqueLiaTattoo\EstoqueLiaTattoo\obj\Debug\net10.0\EstoqueLiaTattoo.sourcelink.json
+C:\Users\feeve\OneDrive\Área de Trabalho\dev\Projetos\LiaTattooArt\EstoqueLiaTattoo\EstoqueLiaTattoo\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

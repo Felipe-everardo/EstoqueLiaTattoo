@@ -287,5 +287,63 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "EstoqueLiaTattoo.Controllers.TintasController",
+    "Method": "ListarTintasAbertas",
+    "RelativePath": "api/Tintas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EstoqueLiaTattoo.Controllers.TintasController",
+    "Method": "JogarFora",
+    "RelativePath": "api/Tintas/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EstoqueLiaTattoo.Controllers.TintasController",
+    "Method": "AbrirNovaTinta",
+    "RelativePath": "api/Tintas/abrir",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "EstoqueLiaTattoo.DTOs.TintaResponseDTO\u002BAbrirTintaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EstoqueLiaTattoo.Controllers.TintasController",
+    "Method": "AtualizarConsumo",
+    "RelativePath": "api/Tintas/atualizar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "EstoqueLiaTattoo.DTOs.TintaResponseDTO\u002BAtualizarConsumoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

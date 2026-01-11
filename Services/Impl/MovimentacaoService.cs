@@ -73,7 +73,16 @@ public class MovimentacaoService : IMovimentacaoServico
             await _context.SaveChangesAsync();
             await transaction.CommitAsync();
 
-            return movimentacao; // Retorna o objeto completo com o ID gerado
+            return new Movimentacao
+            {
+                Id = movimentacao.Id,
+                MaterialId = movimentacao.MaterialId,
+                Quantidade = movimentacao.Quantidade,
+                Tipo = movimentacao.Tipo,
+                Data = movimentacao.Data,
+                Observacao = movimentacao.Observacao
+                // NÃO inclua a propriedade 'Material' aqui!
+            };
         }
         catch
         {

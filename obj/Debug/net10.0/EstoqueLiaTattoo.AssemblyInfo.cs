@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EstoqueLiaTattoo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a683569bb3eb18875843588b97a9f3df40128c6d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fd5c77aa6eb42ca89a02286844a22d82b2c26b6")]
 [assembly: System.Reflection.AssemblyProductAttribute("EstoqueLiaTattoo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EstoqueLiaTattoo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

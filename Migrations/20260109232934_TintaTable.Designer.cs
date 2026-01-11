@@ -4,6 +4,7 @@ using EstoqueLiaTattoo.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EstoqueLiaTattoo.Migrations
 {
     [DbContext(typeof(EstoqueLiaTattooContext))]
-    partial class EstoqueLiaTattooContextModelSnapshot : ModelSnapshot
+    [Migration("20260109232934_TintaTable")]
+    partial class TintaTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
